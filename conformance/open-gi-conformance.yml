@@ -1,0 +1,98 @@
+generated: '2026-07-25'
+method: searched
+source: https://www.opengi.co.uk/legals/operational-resilience
+evidence_document: https://cdn.prod.website-files.com/67a9c379abe902656e656638/680768dcc9e653791083e007_OGI_Operational-Resilience-1.pdf
+note: >-
+  Open GI publishes no OpenAPI, no OAuth/OIDC discovery document and no
+  certification badge wall, so no technical API standard can be asserted
+  from a specification. What it DOES publish is a named operational
+  resilience programme — a downloadable "Operational Resilience:
+  Strengthening Security Postures" paper mapped to the five pillars of the
+  EU Digital Operational Resilience Act (DORA) and referencing the Bank of
+  England PRA SS1/21 and FCA/PRA joint statements. That regulatory posture,
+  plus the sanctions-screening regime Mobius implements, is what is
+  asserted below. Technical standards are recorded honestly as not
+  evidenced rather than assumed.
+standards:
+- id: dora
+  name: EU Digital Operational Resilience Act (Regulation (EU) 2022/2554)
+  conforms: true
+  evidence: >-
+    Open GI's published Operational Resilience paper states "Open GI has
+    adopted and built upon these Five Pillars as part of our operational
+    resilience strategy" — ICT risk management, incident reporting, digital
+    operational resilience testing, information sharing, third-party risk
+    management — and commits to notifying affected customers of significant
+    ICT-related incidents within 24 hours of detection and testing incident
+    response, business continuity and disaster recovery plans at least
+    annually.
+  source: https://www.opengi.co.uk/legals/operational-resilience
+- id: pra-ss1-21
+  name: Bank of England PRA Supervisory Statement SS1/21 (Operational Resilience)
+  conforms: true
+  evidence: Named in the Operational Resilience paper as one of the regimes that "substantially
+    raised the bar of operational resilience" and against which Open GI positions its
+    controls.
+  source: https://www.opengi.co.uk/legals/operational-resilience
+- id: fca-operational-resilience
+  name: FCA / FCA-PRA joint operational resilience expectations
+  conforms: true
+  evidence: Named alongside DORA and PRA SS1/21; Open GI states it is "fully committed
+    to upholding the highest standards of operational resilience and to aiding our
+    customers to satisfy their regulatory compliance requirements."
+  source: https://www.opengi.co.uk/legals/operational-resilience
+- id: uk-gdpr
+  name: UK GDPR / Data Protection Act 2018
+  conforms: true
+  evidence: Public privacy notice published; data protection is a named risk register
+    domain in the ICT Risk Management Framework; Mobius release notes state the Hotjar
+    analytics deployment records no personal data.
+  source: https://www.opengi.co.uk/legals/privacy-notice
+- id: sanctions-screening
+  name: UK / US / EU sanctions list screening
+  conforms: true
+  evidence: >-
+    Mobius release notes (April 2025) document automatic sanctions checks at
+    point of quote against UK, US and EU sanction lists, a Client Checks API
+    for initiating checks and retrieving matches, and a match-management
+    dashboard for overrides.
+  source: https://www.opengi.co.uk/mobius-release
+- id: uk-insurer-edi
+  name: UK general-insurance broker/insurer EDI messaging
+  conforms: true
+  evidence: >-
+    Release notes state the insurer authorisation code "is automatically
+    included in the EDI message when the quote is converted to a policy or
+    accepted, provided EDI is enabled for the scheme." UK-market EDI, not
+    ACORD, carries broker-to-insurer traffic here.
+  source: https://www.opengi.co.uk/mobius-release
+- id: acord
+  name: ACORD standards (AL3 / ACORD XML)
+  conforms: false
+  evidence: ACORD, AL3, ACORD XML, NGDS and IVANS appear nowhere across the public
+    Open GI site (18 pages fetched across product, solutions, partner network, FAQs
+    and release notes). UK-market EDI is used instead.
+- id: oauth2
+  conforms: false
+  evidence: No OpenAPI securitySchemes and no OAuth metadata; /.well-known/oauth-authorization-server
+    returns 404. The only documented identity feature is SSO for Mobius UI users, not
+    a documented API authorization model.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on every resolvable Open
+    GI host.
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI or Swagger document is reachable anonymously; the Mobius Developer
+    Portal that would host one is customer-gated and its URL is unpublished.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No specification or error reference is public, so the error envelope cannot
+    be observed.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404.
+- id: asyncapi
+  conforms: false
+  evidence: No event catalog or AsyncAPI. The closest documented behaviour is an inbound
+    API call that triggers a Mobius custom event — not an outbound webhook surface.

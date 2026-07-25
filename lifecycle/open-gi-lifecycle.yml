@@ -1,0 +1,68 @@
+generated: '2026-07-25'
+method: searched
+source: https://www.opengi.co.uk/mobius-release
+note: >-
+  Open GI's public lifecycle surface is its release notes and its published
+  operational resilience programme. There is no public API versioning
+  policy, no deprecation or sunset policy, no SLA document and no status
+  page — status.opengi.co.uk does not resolve and opengi.statuspage.io is
+  not a provisioned Statuspage (it redirects to Atlassian marketing).
+  Incident communication is contractual and customer-directed rather than
+  a public feed.
+versioning:
+  scheme: dated-release-trains
+  current:
+    mobius: September 2025 release
+    core: Core 19 (October 2025 release)
+  api_versioning_policy: null
+  docs: https://www.opengi.co.uk/mobius-release
+  note: Product releases are dated, not semver. No public API version scheme is documented
+    because no public API reference exists.
+release_cadence:
+  observed: quarterly
+  evidence: Mobius releases documented in February, April, July and September 2025;
+    Core 19 in February, April, July and October 2025.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No deprecation or sunset policy is published, and no RFC 8594 Sunset/Deprecation
+    header behaviour can be observed without access to the gated portal.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA or uptime target. Service commitments live in the
+    customer contract set — the Mobius Platform Services terms page is
+    Webflow password-protected (HTTP 401), as is the API Terms of Use page.
+  gated_terms:
+  - url: https://www.opengi.co.uk/mobius-terms/mobius-platform-services
+    status: 401
+  - url: https://www.opengi.co.uk/supplementary-sales-and-product-terms/api-terms-of-use
+    status: 401
+status_page: null
+status_page_probes:
+- url: https://status.opengi.co.uk/
+  status: 000
+  note: DNS does not resolve.
+- url: https://opengi.statuspage.io/
+  status: 200
+  note: Not a provisioned Statuspage — redirects to atlassian.com/software/statuspage,
+    identically to a control subdomain. Not evidence of a status page.
+incident_communication:
+  public_feed: false
+  customer_notification: within 24 hours of detection for significant ICT-related incidents
+  source: https://www.opengi.co.uk/legals/operational-resilience
+  channels:
+  - https://servicedesk.opengi.co.uk/servicedesk/customer/portals
+  - https://gethelp.opengi.co.uk/
+resilience_testing:
+  incident_response_plan_tested: annually
+  business_continuity_plan: true
+  disaster_recovery_plan: true
+  penetration_testing: external
+  vulnerability_testing: internal
+  pipeline_code_scanning: true
+  open_source_library_monitoring: true
+  infrastructure: dual active-active (mirrored) data centres
+  source: https://cdn.prod.website-files.com/67a9c379abe902656e656638/680768dcc9e653791083e007_OGI_Operational-Resilience-1.pdf
+deprecated_operations: []

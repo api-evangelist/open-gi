@@ -1,0 +1,131 @@
+generated: '2026-07-25'
+method: searched
+source: https://www.opengi.co.uk/mobius-release
+docs:
+- https://www.opengi.co.uk/mobius-release
+- https://www.opengi.co.uk/core-19-release
+- https://www.opengi.co.uk/core-18-release
+scheme: dated-release-trains
+note: >-
+  Open GI publishes public, dated release notes for both of its product
+  trains — the cloud Mobius platform and the legacy Core policy
+  administration system (Core 18, Core 19). There is no semantic version
+  number and no machine-readable feed; releases land on a roughly quarterly
+  cadence (February / April / July / September-October in 2025). The
+  release notes are the ONLY public surface on which Open GI documents
+  actual API behaviour, which is why they are captured here in structure.
+  Mobius also ships in-app release notes inside the Configuration Hub for
+  logged-in customers.
+trains:
+- name: Mobius
+  url: https://www.opengi.co.uk/mobius-release
+  description: Cloud broking platform (policy administration, Dynamic Pricing Tool,
+    Configuration Hub, Mobius APIs).
+  in_app_release_notes: true
+- name: Core 19
+  url: https://www.opengi.co.uk/core-19-release
+  description: Legacy Core policy administration system, release 19.
+- name: Core 18
+  url: https://www.opengi.co.uk/core-18-release
+  description: Legacy Core policy administration system, release 18.
+entries:
+- train: Mobius
+  date: '2025-09'
+  breaking: false
+  highlights:
+  - Set tailored upfront payments in Dynamic Pricing Tool using rule-based logic
+  - Cookie Notification Banner and Cookie Policy
+  - Hotjar user analytics enabled (no personal data recorded)
+  - In-App Release Notes in Configuration Hub
+- train: Mobius
+  date: '2025-07'
+  breaking: false
+  api_related: true
+  highlights:
+  - Manually trigger custom event via API — a Mobius custom event can now be initiated
+    from an external system via an API call
+  - Restrictions and B2B settings moved into User Management
+  - SSO user lifecycle management in User Management (create, edit, bulk delete; Account
+    Type column)
+  - Tenant identification (tenant company name and environment shown in Mobius and
+    RD apps)
+  - Record locking with an Unlock Records option governed by permission
+  - Zero refund on cancellation when a claim has been added
+  - Decline payment plans in the Dynamic Pricing Tool
+- train: Mobius
+  date: '2025-04'
+  breaking: false
+  api_related: true
+  highlights:
+  - Enabled Sanctions Checks API on the Developer Portal for integration — Client Checks
+    API endpoints to initiate a sanction check for a customer, retrieve automated and
+    manual sanction-check matches, get the detail of a specific sanction, and update
+    notes and overridden matches
+  - Automatic sanctions checks at point of quote (UK, US, EU lists), configurable with
+    the product-level AutomaticSanctionsOnQuote parameter
+  - Improved visibility and management of clients with sanction-check matches
+  - Dynamic Pricing Tool can use enrichment data from third-party pricing data sources
+  - Third-Party Services configuration in Configuration Hub (payment gateway, vehicle
+    lookup, address lookup, premium finance, AI, SMS)
+  - Enhanced MTA flow — prevention of MTA creation during renewal invitation
+  - Preferred payment day shown on Direct Debit details
+  - Sorting on Open and Settled Items tables
+- train: Mobius
+  date: '2025-02'
+  breaking: false
+  highlights:
+  - Enhanced flexibility managing MTA backdating (MTABackdateDays, MTABackdateMinutes)
+  - Dynamic Pricing Tool enrichment data as rule conditions for NB, MTA and renewal
+  - New permission to add the Client Support Flag
+  - Insurer authorisation code available for renewals (InsurerAuthCodeRequired parameter;
+    DPT "Set Authorisation Code" outcome) — the code is included in the EDI message
+    when a quote converts to a policy where EDI is enabled for the scheme
+  - Net-rated add-ons in Mobius
+  - Enhanced manual endorsement management (AutoReapplyManualEndorsements)
+  - Edit Premium permission at product and scheme level
+  - Enhanced aggregator search (all quotes per brand, sortable Quote Date column)
+  - Client tag functionality (EnableClientTags)
+- train: Core 19
+  date: '2025-10'
+  breaking: false
+  highlights:
+  - Document filing enhancement in Open Attach (print-to-PDF virtual printer)
+  - Optional delay for document processing in Open Document Centre (max 60 seconds)
+  - Audit trail of sticky notes
+  - Add-Ons through Open Workflow Manager (Add-On Marketplace integration)
+  - Pop-up for VIP frame when populated
+  - Policy chaser enhancement
+  - PowerPlace naming replaced with Commercial
+- train: Core 19
+  date: '2025-07'
+  breaking: false
+  highlights:
+  - Accessibility design changes including a new High Contrast theme
+  - Website address field added to Branch Details in Broker Amendment
+  - Change to Small Debts Report
+- train: Core 19
+  date: '2025-04'
+  breaking: false
+  highlights:
+  - Defer sending of emails until a business-appropriate time
+  - Data Dictionary export in Frame Maintenance Conversion
+  - Show available space for frame calcs
+  - Deletion of documents flagged to users
+  - Accounting reports handle larger settlements and totals
+- train: Core 19
+  date: '2025-02'
+  breaking: false
+  api_related: true
+  highlights:
+  - SME property owners quote API — self-serve Property Owners quotes via the SME API,
+    with Developer Portal access
+  - Sanctions checking improvements (reduced false positives on single-name matches)
+  - Gender-neutral title (Mx) and unspecified gender options in quoting
+  - Database enquiry performance improvements
+  - Bespoke frames help text
+  - Improvements to help troubleshooting (System Notices carry branch and policy reference)
+feed:
+  rss: null
+  atom: null
+  note: No machine-readable changelog feed is published; the release-note pages are
+    Webflow HTML.

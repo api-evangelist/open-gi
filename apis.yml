@@ -66,7 +66,11 @@ apis:
   properties:
   - type: Documentation
     url: https://www.opengi.co.uk/mobius-release
+  - type: ChangeLog
+    url: changelog/open-gi-changelog.yml
 common:
+- type: DomainSecurity
+  url: security/open-gi-domain-security.yml
 - type: Website
   url: https://www.opengi.co.uk/
 - type: About
@@ -75,20 +79,42 @@ common:
   url: https://www.opengi.co.uk/newsroom
 - type: ChangeLog
   url: https://www.opengi.co.uk/mobius-release
+- type: ChangeLog
+  url: changelog/open-gi-changelog.yml
+- type: ReleaseNotes
+  url: https://www.opengi.co.uk/core-19-release
 - type: Documentation
   url: https://www.opengi.co.uk/insurance-software-solutions
+- type: FAQ
+  url: https://www.opengi.co.uk/insurance-software-solutions-faqs
 - type: Support
   url: https://www.opengi.co.uk/support
 - type: SupportPortal
   url: https://servicedesk.opengi.co.uk/servicedesk/customer/portals
+- type: Contact
+  url: https://www.opengi.co.uk/contact
 - type: PartnerNetwork
   url: https://www.opengi.co.uk/sub-solutions/partner-network
 - type: TermsOfService
   url: https://www.opengi.co.uk/legals/terms-and-conditions
 - type: PrivacyPolicy
   url: https://www.opengi.co.uk/legals/privacy-notice
+- type: Accessibility
+  url: https://www.opengi.co.uk/legals/accessibility
+- type: Compliance
+  url: https://www.opengi.co.uk/legals/operational-resilience
+- type: Conformance
+  url: conformance/open-gi-conformance.yml
+- type: Lifecycle
+  url: lifecycle/open-gi-lifecycle.yml
+- type: LLMsTxt
+  url: llms/open-gi-llms.txt
 - type: LinkedIn
   url: https://www.linkedin.com/company/open-gi
+- type: Facebook
+  url: https://www.facebook.com/OpenGISoftware
+- type: Instagram
+  url: https://www.instagram.com/lifeatogi/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

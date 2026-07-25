@@ -1,0 +1,60 @@
+generated: '2026-07-25'
+method: searched
+source: live probes of the Open GI public host
+host: https://www.opengi.co.uk
+note: >-
+  Every /.well-known/ discovery path returns 404. The marketing site is
+  Webflow-hosted and answers unknown /.well-known/ requests with a plain
+  "Invalid .well-known request" body. There is no API host to probe: no
+  api, apis, developer, developers, docs, portal, partners or mobius
+  subdomain resolves under opengi.co.uk, and the Mobius Developer Portal
+  URL is not published publicly. No documents were harvested — this file
+  records the misses so later rounds do not re-guess.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/dnt-policy.txt
+  status: 404
+additional_hosts_probed:
+- host: https://opengi.co.uk
+  path: /.well-known/security.txt
+  status: 404
+- host: https://go.opengi.co.uk
+  status: 200
+  note: Resolves to the same Webflow marketing site as www.opengi.co.uk.
+- host: https://sts.opengi.co.uk
+  status: 000
+  note: >-
+    Present in certificate transparency but does not resolve/answer.
+    /adfs/.well-known/openid-configuration and the WS-Federation
+    FederationMetadata document were both unreachable.
+- host: https://devidm.opengi.co.uk
+  status: 000
+  note: Certificate-transparency host (identity management); does not answer.
+- host: https://access.opengi.co.uk
+  status: 000
+- host: https://vsp.opengi.co.uk
+  status: 000
+- host: https://development.opengi.co.uk
+  status: 000
+- host: https://staging.opengi.co.uk
+  status: 000
+certificate_transparency:
+  source: https://crt.sh/?q=opengi.co.uk
+  hostnames_seen: 38
+  developer_or_api_named_hosts: []
+  note: >-
+    A full CT sweep of opengi.co.uk returns mail/Exchange/Lync, cPanel,
+    identity (sts, devidm, access), environment (development, staging,
+    test-site) and support (gethelp) hosts. No developer-, docs-, api- or
+    portal-named host exists in the public certificate record.
