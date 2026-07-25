@@ -1,0 +1,241 @@
+aid: open-gi
+name: Open GI
+review:
+  question: Does Open GI publish a public, self-serve developer portal with downloadable
+    API definitions for its insurance software?
+  answer: false
+  date: '2026-07-25'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  tier: agency-brokerage-tech
+  specsHarvested: 0
+  gated: true
+findings:
+  summary: |
+    Open GI is a UK/Ireland general insurance software house (Worcester, 45+
+    years, 600+ broker/MGA/insurer customers) whose cloud Mobius platform
+    does genuinely ship APIs — but nothing about them is publicly reachable.
+    Open GI's own public Mobius release notes name a "Developer Portal" and
+    describe Client Checks / sanctions-check endpoints and an API-triggered
+    custom event, yet the portal's URL is never published. No developer,
+    developers, docs, api, apis, portal or partners host resolves under
+    opengi.co.uk (all NXDOMAIN, curl exit code 6 / HTTP 000), and a
+    certificate-transparency sweep of opengi.co.uk returned 39 hostnames with
+    no developer-, docs-, api- or portal-named host among them. Every
+    developer-shaped path on the marketing site 404s. The two pages that would
+    describe the API programme — the Mobius platform services terms and the
+    API Terms of Use — are both Webflow password-protected and return HTTP
+    401 to anonymous requests. That is the finding: the API surface exists,
+    is real, and is entirely customer/partner-gated. Recorded as a stub.
+  developerPortal:
+    publicUrlFound: false
+    referencedButUnpublished: true
+    referenceSource: https://www.opengi.co.uk/mobius-release
+    referenceQuote: >-
+      "Enabled Sanctions Checks API on the Developer Portal for integration. If
+      you're a Mobius APIs user, you can now integrate the sanction checks API
+      directly into your journey... For more details, please visit the Developer
+      Portal or contact the Mobius team."
+    classification: partner/customer login wall (URL not published publicly)
+  probes:
+  - url: https://www.opengi.co.uk/
+    status: 200
+    note: Webflow marketing site; no developer or API navigation anywhere in the header
+      or footer.
+  - url: https://developer.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://developers.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://docs.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://api.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://apis.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://portal.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://partners.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://developerportal.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://mobius.opengi.co.uk/
+    status: 000
+    note: DNS does not resolve (NXDOMAIN).
+  - url: https://www.opengi.co.uk/developers
+    status: 404
+  - url: https://www.opengi.co.uk/developer
+    status: 404
+  - url: https://www.opengi.co.uk/developer-portal
+    status: 404
+  - url: https://www.opengi.co.uk/api
+    status: 404
+  - url: https://www.opengi.co.uk/apis
+    status: 404
+  - url: https://www.opengi.co.uk/partners
+    status: 404
+  - url: https://www.opengi.co.uk/integrations
+    status: 404
+  - url: https://www.opengi.co.uk/supplementary-sales-and-product-terms/api-terms-of-use
+    status: 401
+    note: Listed in the public sitemap but Webflow password-protected — "Protected
+      Page / Password". Even the API terms are gated.
+  - url: https://www.opengi.co.uk/mobius-terms/mobius-platform-services
+    status: 401
+    note: Password-protected. Indexed copy states the Mobius platform "comprises the
+      Web-based policy administration system (Mobius UI), Developer portal for API
+      access, the Dynamic Pricing Tool and Remote Desktop Applications."
+  - url: https://www.opengi.co.uk/mobius-release
+    status: 200
+    note: Public release notes; the only public page that documents actual API behaviour.
+  - url: https://servicedesk.opengi.co.uk/servicedesk/customer/portals
+    status: 200
+    note: Redirects to /servicedesk/customer/user/login — Jira Service Management customer
+      login wall, not a developer portal.
+  - url: https://gethelp.opengi.co.uk/
+    status: 200
+    note: BeyondTrust (Bomgar) remote support portal — "Open GI - Support Centre -
+      Remote Assistance Portal". Not an API surface.
+  - url: https://www.opengi.co.uk/.well-known/openid-configuration
+    status: 404
+  - url: https://www.opengi.co.uk/.well-known/oauth-authorization-server
+    status: 404
+  - url: https://www.opengi.co.uk/openapi.json
+    status: 404
+  - url: https://www.opengi.co.uk/swagger.json
+    status: 404
+  - url: https://www.opengi.co.uk/sitemap.xml
+    status: 200
+    note: 291 URLs; only developer-adjacent entry is the password-protected API Terms
+      of Use.
+  openapi:
+    downloadable: false
+    specsSaved: 0
+    note: No OpenAPI, Swagger, RAML or WSDL artifact is reachable anonymously. There
+      is no public portal to hunt inside, and no Mintlify/Redoc/Stoplight/Readme.io
+      instance was found (opengi.readme.io 404; opengi.gitbook.io 404; opengi.stoplight.io
+      returns 200 but so does a control subdomain — Stoplight wildcards, so it is not
+      evidence). openapi/ directory omitted deliberately.
+  acord:
+    posture: no ACORD reference found; UK-market insurer EDI inside Mobius
+    evidence: >-
+      ACORD, AL3, ACORD XML, NGDS, IVANS, Applied Epic and Vertafore appear
+      nowhere across 18 fetched opengi.co.uk pages (product, solutions,
+      partner network, FAQs, who-we-are, release notes). What Open GI does
+      document is UK-style insurer EDI inside Mobius: the release notes state
+      an insurer authorisation code "is automatically included in the EDI
+      message when the quote is converted to a policy or accepted, provided
+      EDI is enabled for the scheme." Consistent with the UK market, where
+      Polaris-standard EDI and the Partner Network, not ACORD, carry
+      broker-to-insurer traffic.
+  verbs:
+    quote: partner-gated — Mobius performs quoting and the Dynamic Pricing Tool prices
+      it, but no public quote API is documented.
+    bind: partner-gated — quote-to-policy conversion happens over insurer EDI inside
+      the platform, not a documented public API.
+    issue: partner-gated — policy issuance is a Mobius/Core policy administration function;
+      no public API.
+    fnol: not exposed — no public claims or FNOL API surface found.
+    exposedPublicly: none
+    audience: broker, MGA and insurer customers of Open GI only (contracted, portal-gated)
+  auth:
+    model: not publicly documented
+    note: No OAuth metadata, no API-key registration flow, no public sandbox. The
+      only anonymous auth surfaces are the Jira Service Management customer login
+      and a Webflow page password.
+  webhooks:
+    catalog: false
+    asyncapi: false
+    note: >-
+      No event catalog or AsyncAPI. The closest documented event behaviour is
+      the release-note item allowing a Mobius custom event to be triggered from
+      an external system via an API call — an inbound trigger, not an outbound
+      webhook catalog.
+  postman:
+    publicWorkspace: false
+  graphql:
+    surfaceFound: false
+  grpc:
+    protosFound: false
+  transports:
+  - protocol: REST
+    documented: false
+    note: Mobius APIs are described in release notes as REST-shaped (POST/GET endpoints
+      for the Client Checks API) but no base URL or reference documentation is public.
+  - protocol: EDI
+    documented: true
+    note: Insurer EDI messaging inside Mobius for quote-to-policy conversion; UK market
+      convention, not ACORD.
+  - protocol: SOAP
+    documented: false
+  - protocol: GraphQL
+    documented: false
+  - protocol: WebSocket
+    documented: false
+  companyFacts:
+    headquarters: Worcester, England, United Kingdom
+    markets:
+    - United Kingdom
+    - Ireland
+    yearsInMarket: 45+ (per Open GI's own who-we-are page)
+    customers: 600+ brokers, MGAs and insurers
+    partnerNetwork: 150+ insurers, aggregators, premium finance, payment and data-enrichment
+      providers
+    products:
+    - Mobius (cloud policy administration, APIs, Dynamic Pricing Tool)
+    - Core (legacy policy administration; Core 18 / Core 19 releases)
+    - Insurer Hosted Pricing (IHP, IHP+)
+    - Ratings
+    - Quote and buy websites
+    - Customer portals
+    linesOfBusiness:
+    - Personal lines
+    - Commercial lines
+sources:
+- url: https://www.opengi.co.uk/
+  type: Website
+  note: Company homepage, HTTP 200, fetched 2026-07-25.
+- url: https://www.opengi.co.uk/who-we-are
+  type: About
+  note: 45+ years, 600+ customers, UK and Ireland. HTTP 200.
+- url: https://www.opengi.co.uk/mobius-release
+  type: ChangeLog
+  note: Public Mobius release notes — Developer Portal reference, Client Checks /
+    sanctions-check endpoints, API-triggered custom event, insurer EDI message. HTTP
+    200.
+- url: https://www.opengi.co.uk/insurance-software-solutions
+  type: Documentation
+  note: Solutions overview, 150+ partner network. HTTP 200.
+- url: https://www.opengi.co.uk/sub-solutions/partner-network
+  type: Documentation
+  note: Partner Network page — integration is partner-by-partner, not open API. HTTP
+    200.
+- url: https://www.opengi.co.uk/supplementary-sales-and-product-terms/api-terms-of-use
+  type: TermsOfService
+  note: API Terms of Use — password-protected, HTTP 401.
+- url: https://www.opengi.co.uk/mobius-terms/mobius-platform-services
+  type: TermsOfService
+  note: Mobius platform services terms — password-protected, HTTP 401.
+- url: https://crt.sh/?q=opengi.co.uk
+  type: Research
+  note: Certificate transparency sweep, 39 hostnames, no developer/docs/api/portal
+    host.
+actions:
+  openapiDirCreated: false
+  apisYmlCreated: true
+  status: built-stub
+  reason: |
+    Real API capability exists but is entirely customer-gated. No public
+    self-serve developer portal, no reachable specification, no documented
+    auth model. One apis[] entry is recorded for the Mobius APIs, anchored
+    to the only public page that evidences them (the Mobius release notes),
+    with the gating stated explicitly. Nothing was invented: no base URL,
+    no endpoints beyond those Open GI itself published, no scopes, no
+    OpenAPI file.

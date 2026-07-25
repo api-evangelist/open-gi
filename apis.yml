@@ -1,0 +1,94 @@
+aid: open-gi
+url: https://raw.githubusercontent.com/api-evangelist/open-gi/refs/heads/main/apis.yml
+name: Open GI
+kind: company
+description: Open GI is a Worcester-headquartered insurance software house that has
+  supplied the UK and Ireland general insurance market for more than 45 years, serving
+  over 600 broker, MGA and insurer customers across personal and commercial lines.
+  Its product estate spans the legacy Core policy administration system and the newer
+  cloud Mobius platform — policy administration and client management, product management,
+  Insurer Hosted Pricing (IHP and IHP+), Ratings, the Dynamic Pricing Tool, quote-and-buy
+  websites, customer portals and a Partner Network of 150-plus insurers, aggregators,
+  premium finance, payment and data-enrichment providers. Its API posture is honestly
+  partner-gated. Mobius genuinely ships APIs — Open GI's own public release notes
+  describe Client Checks / sanctions-check endpoints and an API-triggered custom-event
+  call — but the Mobius Developer Portal is a customer-only surface whose URL Open
+  GI does not publish, no developer, docs, api or partners subdomain resolves on opengi.co.uk,
+  every /developers, /developer, /api and /partners path on the marketing site returns
+  404, and even the company's own API Terms of Use page is password-protected. There
+  is no public self-serve developer portal, no downloadable OpenAPI or Swagger, no
+  public sandbox, no published auth model and no ACORD reference anywhere on the public
+  site; insurer connectivity is delivered through UK-market EDI messaging inside the
+  platform and through pre-agreed Partner Network integrations rather than through
+  an open API programme.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Insurance
+- United Kingdom
+- Ireland
+- Broker
+- Agency Management
+- Policy Administration
+- Underwriting
+- Insurtech
+- Property and Casualty
+- MGA
+- Insurer Hosted Pricing
+- Partner Gated
+created: '2026-07-25'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis:
+- aid: open-gi:mobius-apis
+  name: Mobius APIs
+  description: >-
+    The API layer of Open GI's cloud Mobius broking platform. Open GI's public
+    Mobius release notes document real API capability — a Client Checks API
+    whose sanctions-check endpoints include a POST to initiate a sanction check
+    for a customer, GET endpoints for automated and manual sanction-check
+    matches, a GET for the detail of a specific sanction and a POST to update
+    notes and overridden matches, plus the ability to trigger a Mobius custom
+    event from an external system via an API call. Access is gated. Open GI
+    states these APIs are consumed through the Mobius Developer Portal by
+    existing "Mobius APIs users", the portal URL is not published anywhere
+    public, no developer or docs host resolves under opengi.co.uk, and the
+    company's API Terms of Use page is password-protected. No base URL,
+    OpenAPI definition, authentication scheme, rate limits or sandbox are
+    publicly documented, so none are recorded here.
+  humanURL: https://www.opengi.co.uk/mobius-release
+  tags:
+  - Insurance
+  - Policy Administration
+  - Sanctions Screening
+  - Client Checks
+  - Broker
+  - Partner Gated
+  properties:
+  - type: Documentation
+    url: https://www.opengi.co.uk/mobius-release
+common:
+- type: Website
+  url: https://www.opengi.co.uk/
+- type: About
+  url: https://www.opengi.co.uk/who-we-are
+- type: Blog
+  url: https://www.opengi.co.uk/newsroom
+- type: ChangeLog
+  url: https://www.opengi.co.uk/mobius-release
+- type: Documentation
+  url: https://www.opengi.co.uk/insurance-software-solutions
+- type: Support
+  url: https://www.opengi.co.uk/support
+- type: SupportPortal
+  url: https://servicedesk.opengi.co.uk/servicedesk/customer/portals
+- type: PartnerNetwork
+  url: https://www.opengi.co.uk/sub-solutions/partner-network
+- type: TermsOfService
+  url: https://www.opengi.co.uk/legals/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.opengi.co.uk/legals/privacy-notice
+- type: LinkedIn
+  url: https://www.linkedin.com/company/open-gi
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
