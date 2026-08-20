@@ -26,6 +26,19 @@ tags:
 - Insurance
 - United Kingdom
 - Ireland
+- Brokers
+- Agency Management
+- Policy Administration
+- Underwriting
+- Insurtech
+- Property and Casualty
+- MGA
+- Insurer Hosted Pricing
+- Partner Gated
+tags_raw:
+- Insurance
+- United Kingdom
+- Ireland
 - Broker
 - Agency Management
 - Policy Administration
@@ -57,6 +70,13 @@ apis:
     publicly documented, so none are recorded here.
   humanURL: https://www.opengi.co.uk/mobius-release
   tags:
+  - Insurance
+  - Policy Administration
+  - Sanctions Screening
+  - Client Checks
+  - Brokers
+  - Partner Gated
+  tags_raw:
   - Insurance
   - Policy Administration
   - Sanctions Screening
