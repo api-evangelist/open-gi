@@ -52,7 +52,7 @@ tags:
 - Insurance
 - United Kingdom
 - Ireland
-- Brokers
+- Brokerage
 - Agency Management
 - Policy Administration
 - Underwriting
@@ -72,6 +72,7 @@ tags_raw:
 - Property and Casualty
 - MGA
 - Insurer Hosted Pricing
+- Brokers
 created: '2026-07-25'
 modified: '2026-10-06'
 specificationVersion: '0.23'
@@ -98,8 +99,7 @@ apis:
   - Policy Administration
   - Sanctions Screening
   - Client Checks
-  - Brokers
-  - Partner Gated
+  - Brokerage
   tags_raw:
   - Insurance
   - Policy Administration
@@ -107,6 +107,7 @@ apis:
   - Client Checks
   - Broker
   - Partner Gated
+  - Brokers
   properties:
   - type: Documentation
     url: https://www.opengi.co.uk/mobius-release
